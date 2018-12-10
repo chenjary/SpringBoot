@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springboot_test?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root
+  cache:
+    type: ehcache
+    ehcache:
+      config: classpath:/ehcache.xml
+
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.chenjie.springboot.learn.entity
+
+logging:
+  level:
+    com.chenjie.springboot.learn.dao: debug
