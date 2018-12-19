@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    # 外置jdbc和log配置文件
+    active: mail
+  thymeleaf:
+    prefix: classpath:/templates/
+    check-template-location: true
+    suffix: .html
+    encoding: UTF-8
+    content-type: text/html
+    mode: HTML5
+    cache: false
