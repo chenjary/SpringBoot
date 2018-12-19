@@ -139,6 +139,14 @@ public class MailServiceImpl implements IMailService {
         }
     }
 
+    /**
+     * 发送带静态资源的邮件
+     * @param to
+     * @param subject
+     * @param content
+     * @param rscPath
+     * @param rscId
+     */
     @Override
     public void sendInlineResourceMail(String to, String subject, String content, String rscPath, String rscId) {
         MimeMessage message = mailSender.createMimeMessage();

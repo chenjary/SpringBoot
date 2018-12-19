@@ -26,9 +26,7 @@ public class SpringbootMailApplicationTests {
     public void sendTemplateMail() {
         String template = "mail/templateMail";
         Context context = new Context();
-
         context.setVariable("id", "006");
-
         mailService.sendTemplateMail("chenjie_task@163.com","模板邮件",template,context);
     }
 
