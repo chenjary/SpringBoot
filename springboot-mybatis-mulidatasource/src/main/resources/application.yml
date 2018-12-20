@@ -1,0 +1,40 @@
+spring:
+  datasource:
+    #连接池设置
+    type: com.alibaba.druid.pool.DruidDataSource
+    initialSize: 1
+    minIdle: 1
+    maxIdle: 2
+    maxActive: 5
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 30000
+    validationQuery: SELECT 1
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    filters: stat,wall,log4j
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+    #主数据源
+    ds-main:
+      url: jdbc:mysql://localhost:3306/multidb1?&useUnicode=true&characterEncoding=utf-8&useSSL=true
+      username: root
+      password: root
+      driverClassName: com.mysql.jdbc.Driver
+    #额外数据源1
+    ds-1:
+      url: jdbc:mysql://localhost:3306/multidb2?&useUnicode=true&characterEncoding=utf-8&useSSL=true
+      username: root
+      password: root
+      driverClassName: com.mysql.jdbc.Driver
+  druid:
+    allow: 127.0.0.1
+    deny: null
+    loginUsername: admin
+    loginPassword: 9527
+    resetEnable: false
+
+
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.chenjie.springboot.learn.entity
